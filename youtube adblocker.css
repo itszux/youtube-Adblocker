@@ -9,7 +9,3 @@ html[normal_video='true'] yt-playability-error-supported-renderers {
 html[normal_video='true'] ytd-enforcement-message-view-model {
 	display: none !important;
 }
-
-html[normal_video='true'] .html5-video-player {
-	display: none !important;
-}
