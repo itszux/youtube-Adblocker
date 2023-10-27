@@ -1,11 +1,15 @@
-html[normal_video='true'] #player-container-outer {
+html[normal_video='true'][blocked='true'] #player-container-outer {
 	visibility: visible !important;
 }
 
-html[normal_video='true'] yt-playability-error-supported-renderers {
+html[normal_video='true'][blocked='true'] yt-playability-error-supported-renderers {
 	display: none !important;
 }
 
-html[normal_video='true'] ytd-enforcement-message-view-model {
+html[normal_video='true'][blocked='true'] ytd-enforcement-message-view-model {
+	display: none !important;
+}
+
+html[normal_video='true'][blocked='true'] .html5-video-player {
 	display: none !important;
 }
