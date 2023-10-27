@@ -1,3 +1,5 @@
+let blocked = true;
+document.documentElement.setAttribute('blocked', blocked)
 function getVideo() {
     document.documentElement.setAttribute('normal_video', true)
     try{document.getElementById('embededVideo').remove()}catch(err){}
@@ -32,15 +34,15 @@ function waitForElm(selector) {
 
 document.documentElement.setAttribute('normal_video', false)
 waitForElm('#container').then((elm) => {
-    if (location.href.includes('watch')) {getVideo()}
+    if (location.href.includes('watch') && blocked) {getVideo()}
 });
 
 let currentPage = location.href;
 setInterval(function(){
     if (currentPage != location.href) {
         currentPage = location.href;
-        try{document.getElementById('embededVideo').remove()}catch(err){}
+        if (blocked) {try{document.getElementById('embededVideo').remove()}catch(err){}}
         document.documentElement.setAttribute('normal_video', false)
-        if (location.href.includes('watch')) {getVideo()}
+        if (location.href.includes('watch') && blocked) {getVideo()}
     }
 }, 500);
